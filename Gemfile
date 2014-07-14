@@ -37,3 +37,24 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'slim-rails'
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+
+group :development do
+  gem 'quiet_assets'
+end
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'factory_girl_rails'
+end
+group :test do
+  gem 'capybara'
+  gem 'database_rewinder'
+end
