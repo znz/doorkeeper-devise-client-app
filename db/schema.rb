@@ -14,12 +14,7 @@
 ActiveRecord::Schema.define(version: 20140714102124) do
 
   create_table "users", force: true do |t|
-    t.string   "email",              default: "", null: false
-    t.integer  "sign_in_count",      default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "email",      default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
@@ -28,5 +23,6 @@ ActiveRecord::Schema.define(version: 20140714102124) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
 
 end
