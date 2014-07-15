@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
       if is_navigational_format?
-        set_flash_message(:notice, :success, kind: ENV['DOORKEEPER_URL_NAME'] || 'Doorkeeper')
+        set_flash_message(:notice, :success, kind: ENV['DOORKEEPER_APP_NAME'] || 'Doorkeeper')
         # hide flash message after auto sign in
         #flash.delete(:notice)
       end
